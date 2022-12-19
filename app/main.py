@@ -1,6 +1,6 @@
 from .database import engine
 from . import models
-from .routers import post, user
+from .routers import post, user, auth
 
 # from random import randrange
 # import time
@@ -11,6 +11,7 @@ from fastapi import FastAPI
 app = FastAPI()
 app.include_router(post.router)
 app.include_router(user.router)
+app.include_router(auth.router)
 
 models.Base.metadata.create_all(bind=engine)
 

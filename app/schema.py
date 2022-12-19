@@ -4,7 +4,8 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional
 
 
-class BasePost(BaseModel):
+
+class Post(BaseModel):
     title: str
     content: str
     is_published: bool = True
@@ -13,19 +14,20 @@ class BasePost(BaseModel):
     class Config:
         orm_mode = True
 
-
-class Post(BasePost):
+class CreatePost(Post):
     pass
 
 
-class ResponsePost(BasePost):
+class ResponsePost(Post):
     id: int
     create_date: datetime
     rating: int
+    owner_id : int
 
 
 class BaseUser(BaseModel):
     email: EmailStr
+
     class Config:
         orm_mode = True
 
@@ -38,3 +40,16 @@ class UserResponse(BaseUser):
     id: int
     create_date: datetime
     pass
+
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id :Optional[str] = None
