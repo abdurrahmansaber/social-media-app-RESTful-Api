@@ -1,6 +1,6 @@
-from .database import engine
-from . import models
-from .routers import post, user, auth
+from database import engine
+import models
+from routers import post, user, auth
 
 # from random import randrange
 # import time

@@ -1,6 +1,6 @@
-from ..schema import UserCreate, UserResponse
-from .. import models, utils
-from ..database import get_db
+from schema import UserCreate, UserResponse
+import models, utils
+from database import get_db
 
 from fastapi import APIRouter, status, HTTPException, Depends
 from sqlalchemy.orm import Session

@@ -1,6 +1,6 @@
-from ..schema import Post, CreatePost, ResponsePost, UserCreate, UserResponse
-from .. import models, utils, oauth2
-from ..database import get_db
+from schema import Post, CreatePost, ResponsePost, UserCreate, UserResponse
+import models, utils, oauth2
+from database import get_db
 
 from typing import List
 
